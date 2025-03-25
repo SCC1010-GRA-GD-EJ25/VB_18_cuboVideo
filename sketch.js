@@ -1,5 +1,9 @@
+let video
+
 function preload() {
   // put preload code here
+  video = createVideo('./videos/video.mp4')
+  video.hide()
 }
 
 function setup() {
@@ -13,5 +17,10 @@ function draw() {
   rotateX(frameCount * 0.01)
   rotateY(frameCount * 0.01)
   rotateZ(frameCount * 0.01)
-  box(150)
+  texture(video)
+  torus(120,80,60,30)
+}
+
+function mousePressed() {
+    video.loop()
 }
